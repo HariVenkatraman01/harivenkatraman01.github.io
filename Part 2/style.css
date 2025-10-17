@@ -71,3 +71,30 @@ section h2 + p {
 h3, h4, h5, h6 {
   letter-spacing: 0.02em;
 }
+
+/* Link styling */
+
+a {
+  color: #aa6666;           
+  text-decoration: underline; 
+  outline: none;            
+}
+
+a:visited {
+  color: #884444;           
+}
+
+a:hover,
+a:focus {
+  color: #cc8888;           
+  text-decoration: none;    
+}
+
+a[href^="http"]::after {
+  content: url('external-link-52.png');
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.25em;
+  vertical-align: middle;
+}
