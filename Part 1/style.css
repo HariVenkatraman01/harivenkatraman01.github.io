@@ -39,3 +39,16 @@ h2 {
   font-weight: 700;
   margin-bottom: 12px;
 }
+
+a {
+  color: green;
+  text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+  color: darkgreen;
+  text-decoration: none;
+  outline: 3px solid rgba(0, 128, 0, 0.15);
+  outline-offset: 2px;
+}
