@@ -47,4 +47,5 @@ btn.addEventListener('click', () => {
     overlay.style.backgroundColor = 'rgb(0 0 0 / 0)';
     btn.classList.add('dark');
   }
+  btn.classList.toggle("dark");
 });
