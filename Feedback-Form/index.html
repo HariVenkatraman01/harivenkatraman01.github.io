@@ -14,69 +14,78 @@ Part 5 of Assignment 4, Feedback Form.
     <script defer src="index.js"></script>
   </head>
   <body>
-    We want your feedback!
+  
+   <h1>We want your feedback!</h1>
 
-    We're very excited that you visited the little house in the woods,
+    <p>We're very excited that you visited the little house in the woods,
     and we want to hear what you thought of it! Please fill in the below
     sections. You don't need to provide your name or contact details, but
     if you do, we'll enter you into a prize draw where you'll have a chance
-    to win prizes.
+    to win prizes.</p>
 
-    --
+<form>
+  <fieldset>
+        <legend>Was the porridge</legend>
+        <label><input type="radio" name="porridge" value="hot" checked> Too hot?</label>
+        <label><input type="radio" name="porridge" value="cold"> Too cold?</label>
+        <label><input type="radio" name="porridge" value="justright"> Just right?</label>
+      </fieldset>
 
-    Facilities
+      <fieldset>
+        <legend>Were the beds</legend>
+        <label><input type="radio" name="beds" value="hard" checked> Too hard?</label>
+        <label><input type="radio" name="beds" value="soft"> Too soft?</label>
+        <label><input type="radio" name="beds" value="justright"> Just right?</label>
+      </fieldset>
 
-    Was the porridge
-    Too hot?
-    Too cold?
-    Just right?
+      <fieldset>
+        <legend>Describe the chairs (select all you agree with)</legend>
+        <label><input type="checkbox" name="chairs" value="comfy"> Comfy</label>
+        <label><input type="checkbox" name="chairs" value="luxurious"> Luxurious</label>
+        <label><input type="checkbox" name="chairs" value="hitec"> Hi tec</label>
+        <label><input type="checkbox" name="chairs" value="pretty"> Pretty</label>
+        <label><input type="checkbox" name="chairs" value="majestic"> Majestic</label>
+      </fieldset>
 
-    Were the beds
-    Too hard?
-    Too soft?
-    Just right?
+      <div class="separator">
+        <label for="bear">Who's your favorite bear?</label>
+        <select id="bear" name="bear">
+          <option>Papa bear</option>
+          <option>Mama bear</option>
+          <option>Junior</option>
+          <option>Dozer</option>
+        </select>
+      </div>
 
-    Describe the chairs (select all you agree with)
-    Comfy
-    Luxurious
-    Hi tec
-    Pretty
-    Majestic
+      <div class="separator">
+        <label for="greeting">Which greeting did you prefer?</label>
+        <select id="greeting" name="greeting">
+          <option>Wave</option>
+          <option>Friendly greeting</option>
+          <option>Growl</option>
+          <option>Claw marks in the door</option>
+        </select>
+      </div>
 
-    --
+      <label for="comments">Give us your comments</label>
+      <textarea id="comments" name="comments"></textarea>
 
-    About your hosts
+      <div class="separator">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name">
+      </div>
 
-    Who's your favorite bear?
-    Papa bear
-    Mama bear
-    Junior
-    Dozer
+      <div class="separator">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email">
+      </div>
 
-    Which greeting did you prefer?
-    Wave
-    Friendly greeting
-    Growl
-    Claw marks in the door
+      <div class="separator">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
 
-    --
-
-    Any other feedback?
-
-    Give us your comments
-
-    --
-
-    Your details
-
-    Name
-    Email
-    Phone
-
-    --
-
-    Submit
-
-    --
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
