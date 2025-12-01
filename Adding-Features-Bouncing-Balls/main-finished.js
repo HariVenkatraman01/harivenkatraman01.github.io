@@ -6,6 +6,9 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
+const para = document.querySelector("p"); // grabs the <p> element in HTML
+let ballCount = 0; // start at 0
+
 // function to generate random number
 
 function random(min, max) {
@@ -29,10 +32,7 @@ class Shape {
 
 class Ball extends Shape {
   constructor(x, y, velX, velY, color, size) {
-    this.x = x;
-    this.y = y;
-    this.velX = velX;
-    this.velY = velY;
+  super(x, y, velX, velY);  
     this.color = color;
     this.size = size;
     this.exists = true;
@@ -160,17 +160,29 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  ballCount++; // increment when ball is added
+  para.textContent = "Ball count: " + ballCount;
 }
+
+const evilCircle = new EvilCircle(width / 2, height / 2);
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
+  let count = 0;
   for (const ball of balls) {
+    if (ball.exists) {
     ball.draw();
     ball.update();
     ball.collisionDetect();
+    }
   }
+  para.textContent = "Ball count: " + count;
+
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
 
   requestAnimationFrame(loop);
 }
