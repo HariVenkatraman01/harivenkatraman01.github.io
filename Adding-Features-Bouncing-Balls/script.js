@@ -133,7 +133,7 @@ class EvilCircle extends Shape {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (ball.exists) {
+      if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -173,6 +173,7 @@ function loop() {
   let count = 0;
   for (const ball of balls) {
     if (ball.exists) {
+    count++;
     ball.draw();
     ball.update();
     ball.collisionDetect();
